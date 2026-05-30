@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace libraria
 {
@@ -16,16 +17,25 @@ namespace libraria
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Book> Books { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            Books = new ObservableCollection<Book>();
+            this.DataContext = this;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             AddBookWindow addBookWindow= new AddBookWindow();
             addBookWindow.Owner = this;
-            addBookWindow.ShowDialog();
+            if (addBookWindow.ShowDialog() == true)
+            {
+                if (addBookWindow.book != null)
+                {
+                    Books.Add(addBookWindow.book);
+                }
+            }
         }
     }
 }
