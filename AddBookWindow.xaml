@@ -27,7 +27,7 @@
                     <Image x:Name="CoverImage" Stretch="UniformToFill"/>
                 </Grid>
             </Border>
-            <Button Content="Browse Image..." Margin="0,20,0,0" Background="#FFB6C1" Foreground="{StaticResource AccentColor}"/>
+            <Button Content="Browse Image..." Click="Button_Click" Margin="0,20,0,0" Background="#FFB6C1" Foreground="{StaticResource AccentColor}"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock Text="TITLE" Foreground="{StaticResource AccentColor}" FontSize="15"
@@ -44,9 +44,9 @@
            Margin="10,10,0,0"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Cancel" Background="#FFB6C1" Foreground="{StaticResource AccentColor}"
+            <Button Content="Cancel" Click="CancelButton_Click" Background="#FFB6C1" Foreground="{StaticResource AccentColor}"
                     Width="100" Margin="10,0,10,0"/>
-            <Button Content="Save" Background="{StaticResource AccentColor}" Foreground="{StaticResource PrimaryColor}"
+            <Button Content="Save" Click="SaveButton_Click" Background="{StaticResource AccentColor}" Foreground="{StaticResource PrimaryColor}"
                     Width="100">
                 <Button.Style>
                     <Style TargetType="Button">
