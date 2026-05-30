@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Libraria" Height="650" Width="1000"
         MinHeight="500" MinWidth="920"
-        Icon="H:\Windows7\Desktop\pwsg\libraria\libraria\ikonki\book.ico">
+        Icon="ikonki/book.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -25,7 +25,7 @@
         </Menu>
         <Grid Grid.Row="1" Background="{StaticResource PrimaryColor}">
             <StackPanel Orientation="Horizontal">
-                <Image Source="H:\Windows7\Desktop\pwsg\libraria\libraria\ikonki\book.png" Width="48" Height="48"/>
+                <Image Source="ikonki/book.png" Width="48" Height="48"/>
                 <StackPanel VerticalAlignment="Center">
                     <TextBlock Text="Libraria"
                                Foreground="{StaticResource AccentColor}"
@@ -40,7 +40,7 @@
         <Grid Grid.Row="2" Background="White">
             
         </Grid>
-        <Grid Grid.Row="4" Background="{StaticResource PrimaryColor}">
+        <Grid Grid.Row="3" Background="{StaticResource PrimaryColor}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>

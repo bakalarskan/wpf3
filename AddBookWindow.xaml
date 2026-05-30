@@ -52,7 +52,7 @@
                     <Style TargetType="Button">
                         <Setter Property="IsEnabled" Value="True"/>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=TitleBox, Path=Text}" Value="">
+                            <DataTrigger Binding="{Binding ElementName=TitleBox, Path=Text, UpdateSourceTrigger=PropertyChanged}" Value="">
                                 <Setter Property="IsEnabled" Value="False"/>
                             </DataTrigger>
                         </Style.Triggers>
