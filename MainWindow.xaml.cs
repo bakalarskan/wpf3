@@ -34,7 +34,33 @@ namespace libraria
                 if (addBookWindow.book != null)
                 {
                     Books.Add(addBookWindow.book);
+                    UpdateStats("Book added");
                 }
+            }
+        }
+
+        private void UpdateStats(string statusMess)
+        {
+            TotalTextBlock.Text = "Total: " + Books.Count.ToString();
+            StatusTextBlock.Text = statusMess;
+        }
+        private void DeleteSelectedBook()
+        {
+            if (BooksListBox.SelectedItem is Book selectedBook)
+            {
+                Books.Remove(selectedBook);
+                UpdateStats("Book removed");
+            }
+        }
+        private void DeleteMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteSelectedBook();
+        }
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Delete)
+            {
+                DeleteSelectedBook();
             }
         }
     }
