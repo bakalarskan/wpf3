@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Libraria" Height="650" Width="1000"
         MinHeight="500" MinWidth="920"
-        Icon="ikonki/book.ico">
+        Icon="ikonki/book.ico"
+        KeyDown="Window_KeyDown">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,7 +21,7 @@
             <MenuItem Header="Book">
                 <MenuItem Header="Add..." Click="MenuItem_Click"/>
                 <MenuItem Header="Edit..."/>
-                <MenuItem Header="Delete..."/>
+                <MenuItem Header="Delete..." Click="DeleteMenuItem_Click"/>
             </MenuItem>
         </Menu>
         <Grid Grid.Row="1" Background="{StaticResource PrimaryColor}">
@@ -37,10 +38,10 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <ListBox Grid.Row="2">
+        <ListBox Grid.Row="2" x:Name="BooksListBox"
             ItemsSource="{Binding Books}"
             BorderThickness="0"
-            Background="F5F7FA"
+            Background="#F5F7FA"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
@@ -52,7 +53,7 @@
                 <DataTemplate>
                     <StackPanel Width="150" Margin="10" HorizontalAlignment="Center">
                         <Border Height="180" Width="120" CornerRadius="4" Background="#E0E6ED" ClipToBounds="True">
-                            <Image Source="{Binding CoverImagePath}" Stretch="UniformToFill"/>
+                            <Image Source="{Binding CoverImage}" Stretch="UniformToFill"/>
                         </Border>
                         <TextBlock Text="{Binding Title}"
                                    FontWeight="Bold"
@@ -94,8 +95,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Total: 0" Foreground="{StaticResource AccentColor}"
+            <TextBlock x:Name="TotalTextBlock" Grid.Column="0" Text="Total: 0" Foreground="{StaticResource AccentColor}" Margin="10,0,0,0"
                        VerticalAlignment="Center" />
+            <TextBlock x:Name="StatusTextBlock" Grid.Column="1" Text="Ready" Foreground="{StaticResource AccentColor}"
+                       Margin="0,0,10,0" VerticalAlignment="Center" />
         </Grid>
     </Grid>
 </Window>
